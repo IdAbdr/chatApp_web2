@@ -106,6 +106,7 @@ server.listen(port, () => {
 ## Client Side (chat.html and chat.js):
 ### HTML File (chat.html)
 Creates an HTML file with a form containing an input field for sending messages and a div for displaying chat messages.
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,13 +128,13 @@ Creates an HTML file with a form containing an input field for sending messages 
 </body>
 
 </html>
-
+```
 ### JavaScript File (chat.js)
 Establishes a Server-Sent Events (SSE) connection to '/sse'.
 Appends incoming messages to the div with the id "messages".
 Submits messages to the server when the form is submitted.
 Clears the input field after submitting a message.
-
+```javascript
 const socket = io('/sse');
 const messagesDiv = document.getElementById('messages');
 const messageForm = document.getElementById('messageForm');
@@ -156,7 +157,7 @@ messageForm.addEventListener('submit', (e) => {
     appendMessage(message);
     messageInput.value = '';
 });
-
+```
 
 This Real-Time Chat Application demonstrates various functionalities, including sending messages, handling JSON responses, and establishing real-time communication using Server-Sent Events (SSE) and Socket.IO.
 
